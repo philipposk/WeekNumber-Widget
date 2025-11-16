@@ -1,0 +1,118 @@
+[
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/layout_widget_lock_screen.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/layout/widget_lock_screen.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/xml_lock_screen_widget_info.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/xml/lock_screen_widget_info.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/layout_activity_about.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/layout/activity_about.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/layout_activity_main.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.weeknumber.widget.app-debug-60:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.weeknumber.widget.app-main-62:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/drawable-night_ic_launcher_foreground.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/drawable-night/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/layout_widget_home_screen.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/layout/widget_home_screen.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/drawable-night_ic_launcher_background.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/drawable-night/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/layout_widget_home_screen_small.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/layout/widget_home_screen_small.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/xml_home_widget_info.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/xml/home_widget_info.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/drawable_danish_flag_background.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/drawable/danish_flag_background.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/layout_activity_widget_configure.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/layout/activity_widget_configure.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/layout_widget_home_screen_compact.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/layout/widget_home_screen_compact.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/layout_widget_home_screen_large.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/layout/widget_home_screen_large.xml"
+    },
+    {
+        "merged": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-debug-60:/layout_widget_home_screen_extra_large.xml.flat",
+        "source": "/Users/phktistakis/.gradle/daemon/8.8/com.weeknumber.widget.app-main-62:/layout/widget_home_screen_extra_large.xml"
+    }
+]

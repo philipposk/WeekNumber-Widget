@@ -1,0 +1,69 @@
+{
+  "" : {
+    "diagnostics" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetExtensionExtension-primary.dia",
+    "emit-module-dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetExtensionExtension-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetExtensionExtension-primary-emit-module.dia",
+    "pch" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetExtensionExtension-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetExtensionExtension-primary.swiftdeps"
+  },
+  "/Users/phktistakis/Week Number Widget (ios)/Week Number Widget/WeekNumberWidgetExtension/WeekNumberCalculator.swift" : {
+    "const-values" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberCalculator.swiftconstvalues",
+    "dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberCalculator.d",
+    "diagnostics" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberCalculator.dia",
+    "index-unit-output-path" : "/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberCalculator.o",
+    "llvm-bc" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberCalculator.bc",
+    "object" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberCalculator.o",
+    "swift-dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberCalculator.swiftdeps",
+    "swiftmodule" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberCalculator~partial.swiftmodule"
+  },
+  "/Users/phktistakis/Week Number Widget (ios)/Week Number Widget/WeekNumberWidgetExtension/WeekNumberTimelineProvider.swift" : {
+    "const-values" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberTimelineProvider.swiftconstvalues",
+    "dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberTimelineProvider.d",
+    "diagnostics" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberTimelineProvider.dia",
+    "index-unit-output-path" : "/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberTimelineProvider.o",
+    "llvm-bc" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberTimelineProvider.bc",
+    "object" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberTimelineProvider.o",
+    "swift-dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberTimelineProvider.swiftdeps",
+    "swiftmodule" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberTimelineProvider~partial.swiftmodule"
+  },
+  "/Users/phktistakis/Week Number Widget (ios)/Week Number Widget/WeekNumberWidgetExtension/WeekNumberWidgetBundle.swift" : {
+    "const-values" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetBundle.swiftconstvalues",
+    "dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetBundle.d",
+    "diagnostics" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetBundle.dia",
+    "index-unit-output-path" : "/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetBundle.o",
+    "llvm-bc" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetBundle.bc",
+    "object" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetBundle.o",
+    "swift-dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetBundle.swiftdeps",
+    "swiftmodule" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetBundle~partial.swiftmodule"
+  },
+  "/Users/phktistakis/Week Number Widget (ios)/Week Number Widget/WeekNumberWidgetExtension/WeekNumberWidgetEntryView.swift" : {
+    "const-values" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetEntryView.swiftconstvalues",
+    "dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetEntryView.d",
+    "diagnostics" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetEntryView.dia",
+    "index-unit-output-path" : "/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetEntryView.o",
+    "llvm-bc" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetEntryView.bc",
+    "object" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetEntryView.o",
+    "swift-dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetEntryView.swiftdeps",
+    "swiftmodule" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetEntryView~partial.swiftmodule"
+  },
+  "/Users/phktistakis/Week Number Widget (ios)/Week Number Widget/WeekNumberWidgetExtension/WeekNumberWidgetExtension.swift" : {
+    "const-values" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetExtension.swiftconstvalues",
+    "dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetExtension.d",
+    "diagnostics" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetExtension.dia",
+    "index-unit-output-path" : "/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetExtension.o",
+    "llvm-bc" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetExtension.bc",
+    "object" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetExtension.o",
+    "swift-dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetExtension.swiftdeps",
+    "swiftmodule" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WeekNumberWidgetExtension~partial.swiftmodule"
+  },
+  "/Users/phktistakis/Week Number Widget (ios)/Week Number Widget/WeekNumberWidgetExtension/WidgetPreferences.swift" : {
+    "const-values" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WidgetPreferences.swiftconstvalues",
+    "dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WidgetPreferences.d",
+    "diagnostics" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WidgetPreferences.dia",
+    "index-unit-output-path" : "/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WidgetPreferences.o",
+    "llvm-bc" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WidgetPreferences.bc",
+    "object" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WidgetPreferences.o",
+    "swift-dependencies" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WidgetPreferences.swiftdeps",
+    "swiftmodule" : "/Users/phktistakis/Week Number Widget (ios)/DerivedData/Build/Intermediates.noindex/Week Number Widget.build/Debug-iphonesimulator/WeekNumberWidgetExtensionExtension.build/Objects-normal/arm64/WidgetPreferences~partial.swiftmodule"
+  }
+}

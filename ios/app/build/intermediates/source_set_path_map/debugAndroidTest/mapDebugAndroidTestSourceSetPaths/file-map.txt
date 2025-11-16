@@ -1,0 +1,6 @@
+com.weeknumber.widget.test.app-jetified-annotation-experimental-1.3.0-0 /Users/phktistakis/.gradle/caches/8.8/transforms/d57ce8561a3ecc468f166361acec9adc/transformed/jetified-annotation-experimental-1.3.0/res
+com.weeknumber.widget.test.app-jetified-core-1.5.0-1 /Users/phktistakis/.gradle/caches/8.8/transforms/e40e508521eebf071910ba0a775da25c/transformed/jetified-core-1.5.0/res
+com.weeknumber.widget.test.app-androidTest-2 /Users/phktistakis/ariel project/app/build/generated/res/resValues/androidTest/debug
+com.weeknumber.widget.test.app-mergeDebugAndroidTestResources-3 /Users/phktistakis/ariel project/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.weeknumber.widget.test.app-mergeDebugAndroidTestResources-4 /Users/phktistakis/ariel project/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.weeknumber.widget.test.app-debugAndroidTest-5 /Users/phktistakis/ariel project/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources

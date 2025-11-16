@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- Widget colors - neutral, glass aesthetic -->
+    <color name="widget_background">#FFFFFFFF</color>
+    <color name="widget_text_primary">#1A1A1A</color>
+    <color name="widget_text_secondary">#6E6E6E</color>
+    <!-- Glass style accent -->
+    <color name="accent_blue">#4A90E2</color>
+</resources>

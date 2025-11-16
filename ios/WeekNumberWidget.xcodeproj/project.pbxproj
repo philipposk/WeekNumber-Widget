@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA000001 /* WeekNumberWidgetApp.swift */ = {isa = PBXBuildFile; fileRef = AA000002 /* WeekNumberWidgetApp.swift */; };
+		AA000003 /* ContentView.swift */ = {isa = PBXBuildFile; fileRef = AA000004 /* ContentView.swift */; };
+		AA000005 /* Assets.xcassets */ = {isa = PBXBuildFile; fileRef = AA000006 /* Assets.xcassets */; };
+		AA000007 /* Preview Assets.xcassets */ = {isa = PBXBuildFile; fileRef = AA000008 /* Preview Assets.xcassets */; };
+		AA000009 /* WeekNumberCalculator.swift */ = {isa = PBXBuildFile; fileRef = AA00000A /* WeekNumberCalculator.swift */; };
+		AA00000B /* WidgetPreferences.swift */ = {isa = PBXBuildFile; fileRef = AA00000C /* WidgetPreferences.swift */; };
+		AA00000D /* AboutView.swift */ = {isa = PBXBuildFile; fileRef = AA00000E /* AboutView.swift */; };
+		AA00000F /* WeekNumberWidgetExtension.swift */ = {isa = PBXBuildFile; fileRef = AA000010 /* WeekNumberWidgetExtension.swift */; };
+		AA000011 /* WeekNumberWidgetEntryView.swift */ = {isa = PBXBuildFile; fileRef = AA000012 /* WeekNumberWidgetEntryView.swift */; };
+		AA000013 /* WeekNumberTimelineProvider.swift */ = {isa = PBXBuildFile; fileRef = AA000014 /* WeekNumberTimelineProvider.swift */; };
+		AA000015 /* WeekNumberWidgetBundle.swift */ = {isa = PBXBuildFile; fileRef = AA000016 /* WeekNumberWidgetBundle.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA000002 /* WeekNumberWidgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekNumberWidgetApp.swift; sourceTree = "<group>"; };
+		AA000004 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AA000006 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA000008 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AA00000A /* WeekNumberCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekNumberCalculator.swift; sourceTree = "<group>"; };
+		AA00000C /* WidgetPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPreferences.swift; sourceTree = "<group>"; };
+		AA00000E /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		AA000010 /* WeekNumberWidgetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekNumberWidgetExtension.swift; sourceTree = "<group>"; };
+		AA000012 /* WeekNumberWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekNumberWidgetEntryView.swift; sourceTree = "<group>"; };
+		AA000014 /* WeekNumberTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekNumberTimelineProvider.swift; sourceTree = "<group>"; };
+		AA000016 /* WeekNumberWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekNumberWidgetBundle.swift; sourceTree = "<group>"; };
+		AA000017 /* WeekNumberWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeekNumberWidget.entitlements; sourceTree = "<group>"; };
+		AA000018 /* WeekNumberWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeekNumberWidgetExtension.entitlements; sourceTree = "<group>"; };
+		AA000019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA00001A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		AA00001B = {
+			isa = PBXGroup;
+			children = (
+				AA00001C /* WeekNumberWidget */,
+				AA00001D /* WeekNumberWidgetExtension */,
+				AA00001E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA00001C /* WeekNumberWidget */ = {
+			isa = PBXGroup;
+			children = (
+				AA000002 /* WeekNumberWidgetApp.swift */,
+				AA000004 /* ContentView.swift */,
+				AA00000E /* AboutView.swift */,
+				AA00000A /* WeekNumberCalculator.swift */,
+				AA00000C /* WidgetPreferences.swift */,
+				AA000006 /* Assets.xcassets */,
+				AA000019 /* Info.plist */,
+				AA000017 /* WeekNumberWidget.entitlements */,
+				AA00001F /* Preview Content */,
+			);
+			path = WeekNumberWidget;
+			sourceTree = "<group>";
+		};
+		AA00001D /* WeekNumberWidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				AA000010 /* WeekNumberWidgetExtension.swift */,
+				AA000012 /* WeekNumberWidgetEntryView.swift */,
+				AA000014 /* WeekNumberTimelineProvider.swift */,
+				AA000016 /* WeekNumberWidgetBundle.swift */,
+				AA00001A /* Info.plist */,
+				AA000018 /* WeekNumberWidgetExtension.entitlements */,
+			);
+			path = WeekNumberWidgetExtension;
+			sourceTree = "<group>";
+		};
+		AA00001E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA00001F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AA000008 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA000020 /* WeekNumberWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA000021 /* Build configuration list for PBXNativeTarget "WeekNumberWidget" */;
+			buildPhases = (
+				AA00002F /* Fix Extension Info.plist */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeekNumberWidget;
+			productName = WeekNumberWidget;
+			productReference = AA000022 /* WeekNumberWidget.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA000023 /* WeekNumberWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA000024 /* Build configuration list for PBXNativeTarget "WeekNumberWidgetExtension" */;
+			buildPhases = (
+				AA00002E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeekNumberWidgetExtension;
+			productName = WeekNumberWidgetExtension;
+			productReference = AA000025 /* WeekNumberWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AA00002E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Fix Info.plist NSExtension";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nAPPEX_PATH=\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\"\nINFO_PLIST=\"${APPEX_PATH}/Info.plist\"\necho \"[Fix NSExtension] Looking for Info.plist at: $INFO_PLIST\"\n\n# Wait for Info.plist to be created (with timeout)\nfor i in {1..10}; do\n    if [ -f \"$INFO_PLIST\" ]; then\n        break\n    fi\n    echo \"[Fix NSExtension] Waiting for Info.plist... ($i/10)\"\n    sleep 0.5\ndone\n\nif [ ! -f \"$INFO_PLIST\" ]; then\n    echo \"[Fix NSExtension] ERROR: Info.plist not found after waiting\"\n    ls -la \"${BUILT_PRODUCTS_DIR}/\" 2>&1 || true\n    exit 1\nfi\n\necho \"[Fix NSExtension] Info.plist found, checking for NSExtension...\"\n\n# Check if NSExtension exists\nif ! /usr/libexec/PlistBuddy -c \"Print NSExtension\" \"$INFO_PLIST\" >/dev/null 2>&1; then\n    echo \"[Fix NSExtension] NSExtension missing, adding it...\"\n    \n    # Add NSExtension dictionary\n    /usr/libexec/PlistBuddy -c \"Add NSExtension dict\" \"$INFO_PLIST\" 2>&1 || {\n        echo \"[Fix NSExtension] Failed to add NSExtension dict\"\n        exit 1\n    }\n    \n    # Add NSExtensionPointIdentifier\n    /usr/libexec/PlistBuddy -c \"Add NSExtension:NSExtensionPointIdentifier string com.apple.widgetkit-extension\" \"$INFO_PLIST\" 2>&1 || {\n        echo \"[Fix NSExtension] Failed to add NSExtensionPointIdentifier\"\n        exit 1\n    }\n    \n    echo \"[Fix NSExtension] ✓ Successfully added NSExtension to Info.plist\"\n    \n    # Verify it was added\n    if /usr/libexec/PlistBuddy -c \"Print NSExtension:NSExtensionPointIdentifier\" \"$INFO_PLIST\" >/dev/null 2>&1; then\n        echo \"[Fix NSExtension] ✓ Verified NSExtension is present\"\n    else\n        echo \"[Fix NSExtension] ERROR: Verification failed\"\n        exit 1\n    fi\nelse\n    echo \"[Fix NSExtension] ✓ NSExtension already exists\"\nfi\n";
+		};
+		AA00002F /* Fix Extension Info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Fix Embedded Extension Info.plist";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "echo \"========================================\"\necho \"[Fix Embedded Extension] Script starting\"\necho \"BUILT_PRODUCTS_DIR: ${BUILT_PRODUCTS_DIR}\"\necho \"WRAPPER_NAME: ${WRAPPER_NAME}\"\nAPP_BUNDLE=\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\"\necho \"APP_BUNDLE: $APP_BUNDLE\"\n\n# Find all appex files in PlugIns\nfind \"${APP_BUNDLE}/PlugIns\" -name \"*.appex\" -type d 2>/dev/null | while read appex; do\n    echo \"[Fix Embedded Extension] Found appex: $appex\"\n    EXT_INFO=\"${appex}/Info.plist\"\n    if [ -f \"$EXT_INFO\" ]; then\n        echo \"[Fix Embedded Extension] Checking Info.plist: $EXT_INFO\"\n        if ! /usr/libexec/PlistBuddy -c \"Print NSExtension\" \"$EXT_INFO\" >/dev/null 2>&1; then\n            echo \"[Fix Embedded Extension] NSExtension missing, adding...\"\n            /usr/libexec/PlistBuddy -c \"Add NSExtension dict\" \"$EXT_INFO\" 2>&1 || echo \"Failed to add dict\"\n            /usr/libexec/PlistBuddy -c \"Add NSExtension:NSExtensionPointIdentifier string com.apple.widgetkit-extension\" \"$EXT_INFO\" 2>&1 || echo \"Failed to add identifier\"\n            echo \"[Fix Embedded Extension] ✓ Fixed $EXT_INFO\"\n        else\n            echo \"[Fix Embedded Extension] ✓ NSExtension already present in $EXT_INFO\"\n        fi\n    else\n        echo \"[Fix Embedded Extension] Info.plist not found in $appex\"\n    fi\ndone\n\necho \"[Fix Embedded Extension] Script completed\"\necho \"========================================\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA000026 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA000027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA000028 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WeekNumberWidget/WeekNumberWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WeekNumberWidget/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = philippos.Week-Number-Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA000029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WeekNumberWidget/WeekNumberWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WeekNumberWidget/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = philippos.Week-Number-Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AA00002A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WeekNumberWidgetExtension/WeekNumberWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WeekNumberWidgetExtension/Info.plist;
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = philippos.Week-Number-Widget.WeekNumberWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA00002B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WeekNumberWidgetExtension/WeekNumberWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WeekNumberWidgetExtension/Info.plist;
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = philippos.Week-Number-Widget.WeekNumberWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA000021 /* Build configuration list for PBXNativeTarget "WeekNumberWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA000028 /* Debug */,
+				AA000029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA000024 /* Build configuration list for PBXNativeTarget "WeekNumberWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA00002A /* Debug */,
+				AA00002B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA00002C /* Build configuration list for PBXProject "WeekNumberWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA000026 /* Debug */,
+				AA000027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA00002D /* Project object */;
+}
+
