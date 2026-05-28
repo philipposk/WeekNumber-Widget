@@ -5,9 +5,8 @@
     <string name="refresh">Refresh</string>
     <string name="about">About</string>
     <string name="about_title">About</string>
-    <string name="about_description">A simple widget to display the current week number on your Android phone\'s home and lock screens.</string>
-    <string name="widget_instructions">1. Long press on your home screen\n2. Select \"Widgets\"\n3. Find \"Week Number Widget\"\n4. Drag to your desired location\n5. Resize the widget to your preferred size\n\nFor lock screen:\n1. Go to Settings &gt; Lock Screen\n2. Enable lock screen widgets\n3. Add widget from widget menu</string>
+    <string name="about_description">A simple widget to display the current week number on your Android home screen.</string>
+    <string name="widget_instructions">1. Long press on your home screen\n2. Select \"Widgets\"\n3. Find \"Week Number Widget\"\n4. Drag to your desired location\n5. Resize the widget to your preferred size</string>
     <string name="home_widget_description">Displays the current week number on your home screen</string>
-    <string name="lock_screen_widget_description">Displays the current week number on your lock screen</string>
 </resources>
 

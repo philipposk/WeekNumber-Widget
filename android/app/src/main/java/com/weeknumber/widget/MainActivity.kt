@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupViews() {
         // Update week number display
         updateWeekNumber()
-        
+
         // Set up configure widgets button
         binding.configureWidgetsButton.setOnClickListener {
             openWidgetConfiguration()
@@ -47,20 +47,32 @@ class MainActivity : AppCompatActivity() {
         val appWidgetManager = AppWidgetManager.getInstance(this)
         val componentName = ComponentName(this, HomeScreenWidgetProvider::class.java)
         val widgetIds = appWidgetManager.getAppWidgetIds(componentName)
-        
-        if (widgetIds.isNotEmpty()) {
-            // Open configuration for the first widget
-            val configIntent = Intent(this, WidgetConfigureActivity::class.java)
-            configIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetIds[0])
-            startActivity(configIntent)
-        } else {
-            // No widgets yet - show instructions in a dialog or toast
-            android.widget.Toast.makeText(
+
+        when (widgetIds.size) {
+            0 -> android.widget.Toast.makeText(
                 this,
-                "Add a widget to your home screen to configure it",
+                "Add a widget to your home screen first",
                 android.widget.Toast.LENGTH_SHORT
             ).show()
+            1 -> launchConfig(widgetIds[0])
+            else -> showWidgetPicker(widgetIds)
         }
+    }
+
+    private fun showWidgetPicker(widgetIds: IntArray) {
+        val labels = widgetIds.mapIndexed { i, _ -> "Widget ${i + 1}" }.toTypedArray()
+        androidx.appcompat.app.AlertDialog.Builder(this)
+            .setTitle("Pick widget to configure")
+            .setItems(labels) { _, which -> launchConfig(widgetIds[which]) }
+            .show()
+    }
+
+    private fun launchConfig(widgetId: Int) {
+        val configIntent = Intent(this, WidgetConfigureActivity::class.java).apply {
+            action = WidgetConfigureActivity.ACTION_RECONFIGURE
+            putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId)
+        }
+        startActivity(configIntent)
     }
 
     private fun updateWeekNumber() {

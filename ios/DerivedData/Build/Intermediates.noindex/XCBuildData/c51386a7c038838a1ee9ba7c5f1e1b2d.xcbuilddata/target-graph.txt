@@ -1,4 +1,0 @@
-Target dependency graph (2 targets)
-Target 'Week Number Widget' in project 'Week Number Widget'
-➜ Explicit dependency on target 'WeekNumberWidgetExtensionExtension' in project 'Week Number Widget'
-Target 'WeekNumberWidgetExtensionExtension' in project 'Week Number Widget' (no dependencies)

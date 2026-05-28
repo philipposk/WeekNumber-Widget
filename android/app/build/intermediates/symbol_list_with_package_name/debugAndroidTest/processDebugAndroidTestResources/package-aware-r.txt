@@ -1,3 +1,0 @@
-com.weeknumber.widget.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme

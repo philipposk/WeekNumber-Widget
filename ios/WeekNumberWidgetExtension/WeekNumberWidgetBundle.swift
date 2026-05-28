@@ -1,10 +1,3 @@
-//
-//  WeekNumberWidgetBundle.swift
-//  WeekNumberWidgetExtension
-//
-//  Created for iOS
-//
-
 import WidgetKit
 import SwiftUI
 
@@ -14,4 +7,3 @@ struct WeekNumberWidgetBundle: WidgetBundle {
         WeekNumberWidget()
     }
 }
-

@@ -6,16 +6,16 @@
     android:viewportHeight="108">
     <!-- Minimal week indicator: 7 dots representing days of the week -->
     <group android:translateX="54" android:translateY="38">
-        <circle android:fillColor="#4A90E2" android:cx="-18" android:cy="0" android:r="3" />
-        <circle android:fillColor="#4A90E2" android:cx="-12" android:cy="0" android:r="3" />
-        <circle android:fillColor="#4A90E2" android:cx="-6" android:cy="0" android:r="3" />
-        <circle android:fillColor="#4A90E2" android:cx="0" android:cy="0" android:r="4" />
-        <circle android:fillColor="#4A90E2" android:cx="6" android:cy="0" android:r="3" />
-        <circle android:fillColor="#4A90E2" android:cx="12" android:cy="0" android:r="3" />
-        <circle android:fillColor="#4A90E2" android:cx="18" android:cy="0" android:r="3" />
+        <path android:fillColor="#4A90E2" android:pathData="M-21,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z" />
+        <path android:fillColor="#4A90E2" android:pathData="M-15,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z" />
+        <path android:fillColor="#4A90E2" android:pathData="M-9,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z" />
+        <path android:fillColor="#4A90E2" android:pathData="M-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0 Z" />
+        <path android:fillColor="#4A90E2" android:pathData="M3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z" />
+        <path android:fillColor="#4A90E2" android:pathData="M9,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z" />
+        <path android:fillColor="#4A90E2" android:pathData="M15,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z" />
     </group>
-    
-    <!-- Minimal "W" letter for Week - simplified geometric shape -->
+
+    <!-- Minimal "W" letter for Week -->
     <group android:translateX="54" android:translateY="62">
         <path
             android:fillColor="#4A90E2"
