@@ -64,7 +64,7 @@ enum WeekNumberCalculator {
         }
     }
 
-    /// Days remaining in the current calendar year (incl. today).
+    /// Whole days left in the year after today (Dec 31 returns 0).
     static func daysRemainingInYear(date: Date = Date()) -> Int {
         var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = TimeZone.current

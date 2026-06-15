@@ -109,7 +109,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun shareWeekNumber() {
-        val week = WeekNumberCalculator.getCurrentWeekNumber(this)
+        // Share the same week the user sees on screen (first widget's preference).
+        val firstId = AppWidgetManager.getInstance(this)
+            .getAppWidgetIds(ComponentName(this, HomeScreenWidgetProvider::class.java))
+            .firstOrNull() ?: AppWidgetManager.INVALID_APPWIDGET_ID
+        val week = WeekNumberCalculator.getCurrentWeekNumber(this, firstId)
         val text = getString(R.string.share_week_text, week, WeekNumberCalculator.getCurrentYear())
         val send = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"

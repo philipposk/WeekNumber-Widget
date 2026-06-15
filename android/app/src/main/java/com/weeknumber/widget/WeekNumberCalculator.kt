@@ -60,7 +60,7 @@ object WeekNumberCalculator {
         return "Week ${getCurrentWeekNumber(context, widgetId)}"
     }
 
-    /** Days remaining in the current calendar year, including today. */
+    /** Whole days left in the year after today (Dec 31 returns 0). */
     fun daysRemainingInYear(): Int {
         val now = GregorianCalendar(Locale.US)
         val year = now.get(Calendar.YEAR)
@@ -89,7 +89,9 @@ object WeekNumberCalculator {
         while (cal.get(Calendar.DAY_OF_WEEK) != firstDow) {
             cal.add(Calendar.DAY_OF_MONTH, -1)
         }
-        val fmt = java.text.SimpleDateFormat("MMM d", Locale.getDefault())
+        // Locale-adaptive month/day order (skeleton, not a fixed "MMM d" pattern).
+        val pattern = android.text.format.DateFormat.getBestDateTimePattern(Locale.getDefault(), "MMMd")
+        val fmt = java.text.SimpleDateFormat(pattern, Locale.getDefault())
         val start = fmt.format(cal.time)
         cal.add(Calendar.DAY_OF_MONTH, 6)
         val end = fmt.format(cal.time)

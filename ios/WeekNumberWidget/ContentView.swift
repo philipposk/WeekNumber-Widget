@@ -41,7 +41,8 @@ struct ContentView: View {
         let range = WeekNumberCalculator.weekRange(weekStart: weekStart)
         let fmt: DateFormatter = {
             let f = DateFormatter()
-            f.dateFormat = "MMM d"
+            // Locale-adaptive month/day order rather than a fixed "MMM d".
+            f.setLocalizedDateFormatFromTemplate("MMMd")
             return f
         }()
         let rangeText: String = {
