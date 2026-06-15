@@ -8,11 +8,16 @@ struct ContentView: View {
         WeekNumberCalculator.currentWeekNumber(weekStart: weekStart)
     }
 
+    private var shareText: String {
+        "\(WeekNumberCalculator.weekLabel()) \(weekNumber) of \(WeekNumberCalculator.currentYear())"
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
                     heroCard
+                    thisWeekCard
                     description
                     weekStartPicker
                     instructionsCard
@@ -22,7 +27,63 @@ struct ContentView: View {
             }
             .background(Color(.systemBackground))
             .navigationTitle("Week Number")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    ShareLink(item: shareText) {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                }
+            }
         }
+    }
+
+    private var thisWeekCard: some View {
+        let range = WeekNumberCalculator.weekRange(weekStart: weekStart)
+        let fmt: DateFormatter = {
+            let f = DateFormatter()
+            f.dateFormat = "MMM d"
+            return f
+        }()
+        let rangeText: String = {
+            guard let range else { return "—" }
+            return "\(fmt.string(from: range.start)) – \(fmt.string(from: range.end))"
+        }()
+        let daysLeft = WeekNumberCalculator.daysRemainingInYear()
+        let progress = WeekNumberCalculator.yearProgress()
+
+        return VStack(alignment: .leading, spacing: 12) {
+            Text("THIS WEEK")
+                .font(.caption.weight(.semibold))
+                .tracking(1)
+                .foregroundStyle(.secondary)
+            infoRow(icon: "calendar", label: "Dates", value: rangeText)
+            infoRow(icon: "clock", label: "Days left in year", value: "\(daysLeft)")
+            VStack(alignment: .leading, spacing: 6) {
+                HStack {
+                    Image(systemName: "chart.bar.fill").frame(width: 22)
+                    Text("Year progress").foregroundStyle(.secondary)
+                    Spacer()
+                    Text("\(Int(progress * 100))%").fontWeight(.semibold)
+                }
+                .font(.subheadline)
+                ProgressView(value: progress)
+                    .tint(.accentColor)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(20)
+        .background(Color(.secondarySystemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+    }
+
+    private func infoRow(icon: String, label: String, value: String) -> some View {
+        HStack {
+            Image(systemName: icon).frame(width: 22)
+            Text(label).foregroundStyle(.secondary)
+            Spacer()
+            Text(value).fontWeight(.semibold)
+        }
+        .font(.subheadline)
     }
 
     private var aboutLink: some View {

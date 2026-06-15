@@ -35,15 +35,72 @@
             android:layout_marginTop="8dp"
             android:letterSpacing="0.02" />
 
+        <!-- This week info card -->
+        <LinearLayout
+            android:id="@+id/this_week_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_marginTop="32dp"
+            android:background="?attr/colorSurfaceVariant"
+            android:backgroundTint="?attr/colorSurfaceVariant">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="THIS WEEK"
+                android:textSize="12sp"
+                android:letterSpacing="0.08"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <TextView
+                android:id="@+id/week_dates_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jun 9 – Jun 15"
+                android:textSize="15sp"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/days_left_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="200 days left in the year"
+                android:textSize="15sp"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_marginTop="6dp" />
+
+            <ProgressBar
+                android:id="@+id/year_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:max="100"
+                android:progress="45" />
+
+            <TextView
+                android:id="@+id/year_progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45% of the year"
+                android:textSize="13sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:layout_marginTop="6dp" />
+        </LinearLayout>
+
         <!-- App Description -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Display the current week number on your home and lock screens"
+            android:text="Display the current week number on your home screen"
             android:textSize="14sp"
             android:textColor="?attr/colorOnSurfaceVariant"
             android:gravity="center"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="32dp"
             android:alpha="0.8"
             android:lineSpacingMultiplier="1.4" />
 

@@ -17,17 +17,20 @@ struct Provider: AppIntentTimelineProvider {
         WeekEntry(date: Date(), configuration: configuration)
     }
 
-    /// One entry now, refresh scheduled for the next midnight so the number
-    /// is always current without polling.
+    /// Two entries — now and just after the next midnight — so the number ticks
+    /// over on its own at the day boundary, with a refresh scheduled past it.
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<WeekEntry> {
         let now = Date()
-        let entry = WeekEntry(date: now, configuration: configuration)
         let nextMidnight = Calendar.current.nextDate(
             after: now,
             matching: DateComponents(hour: 0, minute: 0, second: 5),
             matchingPolicy: .nextTime
         ) ?? now.addingTimeInterval(3600)
-        return Timeline(entries: [entry], policy: .after(nextMidnight))
+        let entries = [
+            WeekEntry(date: now, configuration: configuration),
+            WeekEntry(date: nextMidnight, configuration: configuration),
+        ]
+        return Timeline(entries: entries, policy: .after(nextMidnight))
     }
 }
 

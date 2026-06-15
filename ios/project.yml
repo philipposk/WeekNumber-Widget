@@ -49,3 +49,25 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.weeknumber.widget.widget
         GENERATE_INFOPLIST_FILE: NO
         TARGETED_DEVICE_FAMILY: "1,2"
+
+  WeekNumberWidgetTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: WeekNumberWidgetTests
+    dependencies:
+      - target: WeekNumberWidget
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.weeknumber.widget.tests
+        GENERATE_INFOPLIST_FILE: YES
+
+schemes:
+  WeekNumberWidget:
+    build:
+      targets:
+        WeekNumberWidget: all
+    test:
+      targets:
+        - WeekNumberWidgetTests
+      gatherCoverageData: true

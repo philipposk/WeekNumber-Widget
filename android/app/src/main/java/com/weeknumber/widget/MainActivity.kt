@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.weeknumber.widget.databinding.ActivityMainBinding
 import com.weeknumber.widget.widget.HomeScreenWidgetProvider
 import com.weeknumber.widget.widget.WidgetConfigureActivity
+import com.weeknumber.widget.widget.WidgetPreferences
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -60,7 +61,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showWidgetPicker(widgetIds: IntArray) {
-        val labels = widgetIds.mapIndexed { i, _ -> "Widget ${i + 1}" }.toTypedArray()
+        // Label each widget with its current week number + week-start so the
+        // user can tell otherwise-identical widgets apart.
+        val labels = widgetIds.mapIndexed { i, id ->
+            val week = WeekNumberCalculator.getCurrentWeekNumber(this, id)
+            val start = WidgetPreferences.getWeekStart(this, id)
+                .replaceFirstChar { it.uppercase() }
+            "Widget ${i + 1}  ·  Week $week  ·  $start start"
+        }.toTypedArray()
         androidx.appcompat.app.AlertDialog.Builder(this)
             .setTitle("Pick widget to configure")
             .setItems(labels) { _, which -> launchConfig(widgetIds[which]) }
@@ -80,14 +88,46 @@ class MainActivity : AppCompatActivity() {
         val appWidgetManager = AppWidgetManager.getInstance(this)
         val componentName = ComponentName(this, HomeScreenWidgetProvider::class.java)
         val widgetIds = appWidgetManager.getAppWidgetIds(componentName)
-        
-        val weekNumber = if (widgetIds.isNotEmpty()) {
-            WeekNumberCalculator.getCurrentWeekNumber(this, widgetIds[0])
-        } else {
-            WeekNumberCalculator.getCurrentWeekNumber() // Default to Monday
-        }
-        
+
+        val firstId = widgetIds.firstOrNull() ?: AppWidgetManager.INVALID_APPWIDGET_ID
+        val weekNumber = WeekNumberCalculator.getCurrentWeekNumber(this, firstId)
+
         binding.weekNumberText.text = weekNumber.toString()
+        updateThisWeekCard(firstId)
+    }
+
+    private fun updateThisWeekCard(widgetId: Int) {
+        binding.weekDatesText.text =
+            WeekNumberCalculator.weekRangeLabel(this, widgetId)
+        val daysLeft = WeekNumberCalculator.daysRemainingInYear()
+        binding.daysLeftText.text = resources.getQuantityString(
+            R.plurals.days_left_in_year, daysLeft, daysLeft
+        )
+        val progress = WeekNumberCalculator.yearProgressPercent()
+        binding.yearProgress.progress = progress
+        binding.yearProgressText.text = getString(R.string.year_progress, progress)
+    }
+
+    private fun shareWeekNumber() {
+        val week = WeekNumberCalculator.getCurrentWeekNumber(this)
+        val text = getString(R.string.share_week_text, week, WeekNumberCalculator.getCurrentYear())
+        val send = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, text)
+        }
+        startActivity(Intent.createChooser(send, getString(R.string.share_week)))
+    }
+
+    override fun onCreateOptionsMenu(menu: android.view.Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: android.view.MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_share -> { shareWeekNumber(); true }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onResume() {
