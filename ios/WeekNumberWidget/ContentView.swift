@@ -9,7 +9,8 @@ struct ContentView: View {
     }
 
     private var shareText: String {
-        "\(WeekNumberCalculator.weekLabel()) \(weekNumber) of \(WeekNumberCalculator.currentYear())"
+        // Language-neutral separator so the connector isn't English-only.
+        "\(WeekNumberCalculator.weekLabel()) \(weekNumber) · \(WeekNumberCalculator.currentYear())"
     }
 
     var body: some View {

@@ -19,7 +19,8 @@ glance, without opening an app. Available for both Android and iPhone.
 
 ## Status
 Native apps for Android and iPhone, in separate folders. Both build and are
-unit-tested; CI runs on every push.
+unit-tested; CI runs per platform on pull requests and pushes that touch that
+platform's folder.
 
 > Note: Android removed system *lock-screen* widgets in Android 5.0, so on Android
 > this is a home-screen widget. iPhone supports both home and lock screen.
