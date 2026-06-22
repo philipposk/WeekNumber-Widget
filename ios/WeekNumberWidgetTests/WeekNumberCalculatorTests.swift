@@ -68,4 +68,35 @@ final class WeekNumberCalculatorTests: XCTestCase {
         let days = Calendar(identifier: .gregorian).dateComponents([.day], from: range!.start, to: range!.end).day
         XCTAssertEqual(days, 6)
     }
+
+    // MARK: Colour hex round-trip
+
+    func testHexParsesSixDigit() {
+        let c = RGBA(hex: "#4A90E2")
+        XCTAssertNotNil(c)
+        XCTAssertEqual(c!.a, 1, accuracy: 0.001)
+        XCTAssertEqual(c!.r, 0x4A / 255.0, accuracy: 0.001)
+        XCTAssertEqual(c!.g, 0x90 / 255.0, accuracy: 0.001)
+        XCTAssertEqual(c!.b, 0xE2 / 255.0, accuracy: 0.001)
+    }
+
+    func testHexParsesEightDigitAlpha() {
+        let c = RGBA(hex: "#80FFFFFF")
+        XCTAssertNotNil(c)
+        XCTAssertEqual(c!.a, 0x80 / 255.0, accuracy: 0.001)
+    }
+
+    func testHexRejectsGarbage() {
+        XCTAssertNil(RGBA(hex: "not-a-color"))
+        XCTAssertNil(RGBA(hex: "#12"))
+    }
+
+    func testHexRoundTrip() {
+        let original = RGBA(r: 0.29, g: 0.56, b: 0.91, a: 1)
+        let parsed = RGBA(hex: original.hexString)
+        XCTAssertNotNil(parsed)
+        XCTAssertEqual(parsed!.r, original.r, accuracy: 0.01)
+        XCTAssertEqual(parsed!.g, original.g, accuracy: 0.01)
+        XCTAssertEqual(parsed!.b, original.b, accuracy: 0.01)
+    }
 }

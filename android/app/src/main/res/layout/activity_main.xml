@@ -1,170 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSurface"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    android:background="?attr/colorSurface">
 
-    <LinearLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/main_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center">
+        android:layout_height="?attr/actionBarSize"
+        app:title="@string/app_name"
+        app:titleTextColor="?attr/colorOnSurface"
+        android:background="?attr/colorSurface" />
 
-        <!-- Week Number Display -->
-        <TextView
-            android:id="@+id/week_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Week"
-            android:textSize="18sp"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:layout_marginTop="48dp"
-            android:alpha="0.7" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/week_number_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="46"
-            android:textSize="96sp"
-            android:textStyle="bold"
-            android:textColor="?attr/colorOnSurface"
-            android:layout_marginTop="8dp"
-            android:letterSpacing="0.02" />
-
-        <!-- This week info card -->
         <LinearLayout
-            android:id="@+id/this_week_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:layout_marginTop="32dp"
-            android:background="?attr/colorSurfaceVariant"
-            android:backgroundTint="?attr/colorSurfaceVariant">
+            android:padding="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="THIS WEEK"
-                android:textSize="12sp"
-                android:letterSpacing="0.08"
-                android:textStyle="bold"
-                android:textColor="?attr/colorOnSurfaceVariant" />
-
-            <TextView
-                android:id="@+id/week_dates_text"
+            <!-- Hero: current week number -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Jun 9 – Jun 15"
-                android:textSize="15sp"
-                android:textColor="?attr/colorOnSurface"
-                android:layout_marginTop="10dp" />
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant">
 
-            <TextView
-                android:id="@+id/days_left_text"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingVertical="36dp">
+
+                    <TextView
+                        android:id="@+id/week_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="WEEK"
+                        android:textSize="14sp"
+                        android:letterSpacing="0.15"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <TextView
+                        android:id="@+id/week_number_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="46"
+                        android:textSize="104sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurface"
+                        android:layout_marginTop="4dp"
+                        android:letterSpacing="0.02" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- This week info -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="200 days left in the year"
-                android:textSize="15sp"
-                android:textColor="?attr/colorOnSurface"
-                android:layout_marginTop="6dp" />
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant">
 
-            <ProgressBar
-                android:id="@+id/year_progress"
-                style="?android:attr/progressBarStyleHorizontal"
+                <LinearLayout
+                    android:id="@+id/this_week_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="THIS WEEK"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <TextView
+                        android:id="@+id/week_dates_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Jun 9 – Jun 15"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorOnSurface"
+                        android:layout_marginTop="12dp" />
+
+                    <TextView
+                        android:id="@+id/days_left_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="200 days left in the year"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorOnSurface"
+                        android:layout_marginTop="6dp" />
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/year_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:trackCornerRadius="6dp"
+                        app:trackThickness="8dp"
+                        android:max="100"
+                        android:progress="45" />
+
+                    <TextView
+                        android:id="@+id/year_progress_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="45% of the year"
+                        android:textSize="13sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Expandable instructions -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:max="100"
-                android:progress="45" />
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant">
 
-            <TextView
-                android:id="@+id/year_progress_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="45% of the year"
-                android:textSize="13sp"
-                android:textColor="?attr/colorOnSurfaceVariant"
-                android:layout_marginTop="6dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/instructions_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="20dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <TextView
+                            android:id="@+id/instructions_text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="How to add the widget"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorOnSurface" />
+
+                        <TextView
+                            android:id="@+id/instructions_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="▼"
+                            android:textSize="12sp"
+                            android:textColor="@color/accent_blue"
+                            android:layout_marginStart="8dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/instructions_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/widget_instructions"
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:paddingHorizontal="20dp"
+                        android:paddingBottom="20dp"
+                        android:visibility="gone"
+                        android:lineSpacingMultiplier="1.5" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Configure -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/configure_widgets_button"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="20dp"
+                android:text="Configure a widget"
+                android:textSize="16sp"
+                app:cornerRadius="16dp"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton" />
+
         </LinearLayout>
-
-        <!-- App Description -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Display the current week number on your home screen"
-            android:textSize="14sp"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:gravity="center"
-            android:layout_marginTop="32dp"
-            android:alpha="0.8"
-            android:lineSpacingMultiplier="1.4" />
-
-        <!-- Expandable Instructions -->
-        <LinearLayout
-            android:id="@+id/instructions_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:padding="16dp"
-            android:layout_marginTop="32dp"
-            android:background="?attr/colorSurfaceVariant"
-            android:backgroundTint="?attr/colorSurfaceVariant"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground">
-
-            <TextView
-                android:id="@+id/instructions_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="To add widgets to your home and lock screens"
-                android:textSize="15sp"
-                android:textColor="@color/accent_blue"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/instructions_arrow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="▼"
-                android:textSize="12sp"
-                android:textColor="@color/accent_blue"
-                android:layout_marginStart="8dp" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/instructions_content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/widget_instructions"
-            android:textSize="13sp"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:padding="16dp"
-            android:background="?attr/colorSurfaceVariant"
-            android:backgroundTint="?attr/colorSurfaceVariant"
-            android:visibility="gone"
-            android:alpha="0.9"
-            android:lineSpacingMultiplier="1.5" />
-
-        <!-- Configuration Button -->
-        <Button
-            android:id="@+id/configure_widgets_button"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="Configuration"
-            android:textSize="16sp"
-            android:textColor="?attr/colorOnSurface"
-            android:backgroundTint="?attr/colorSurfaceVariant"
-            android:layout_marginTop="32dp"
-            android:alpha="0.7"
-            android:elevation="0dp" />
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

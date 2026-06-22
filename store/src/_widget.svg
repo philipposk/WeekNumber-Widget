@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- Reusable home-screen widget tile preview (not referenced directly;
+       kept for design parity with the in-app preview). -->
+  <rect width="300" height="300" rx="48" fill="#FFFFFF"/>
+  <text x="150" y="120" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
+        font-size="34" font-weight="700" letter-spacing="3" fill="#6E6E6E">WEEK</text>
+  <text x="150" y="245" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
+        font-size="170" font-weight="800" fill="#1A1A1A">25</text>
+</svg>

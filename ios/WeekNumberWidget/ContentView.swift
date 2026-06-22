@@ -20,6 +20,7 @@ struct ContentView: View {
                     thisWeekCard
                     description
                     weekStartPicker
+                    colorsLink
                     instructionsCard
                     aboutLink
                 }
@@ -87,11 +88,11 @@ struct ContentView: View {
         .font(.subheadline)
     }
 
-    private var aboutLink: some View {
-        NavigationLink(destination: AboutView()) {
+    private func rowLink<Destination: View>(icon: String, title: String, destination: Destination) -> some View {
+        NavigationLink(destination: destination) {
             HStack {
-                Image(systemName: "info.circle")
-                Text("About").font(.headline)
+                Image(systemName: icon)
+                Text(title).font(.headline)
                 Spacer()
                 Image(systemName: "chevron.right")
                     .font(.caption)
@@ -103,6 +104,14 @@ struct ContentView: View {
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
         .buttonStyle(.plain)
+    }
+
+    private var colorsLink: some View {
+        rowLink(icon: "paintpalette", title: "Widget colours", destination: WidgetColorSettingsView())
+    }
+
+    private var aboutLink: some View {
+        rowLink(icon: "info.circle", title: "About", destination: AboutView())
     }
 
     private var heroCard: some View {
@@ -120,6 +129,8 @@ struct ContentView: View {
         .padding(.vertical, 40)
         .background(Color(.secondarySystemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(WeekNumberCalculator.weekLabel()) \(weekNumber)")
     }
 
     private var description: some View {

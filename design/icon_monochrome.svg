@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Single-colour glyph for Android 13+ themed icons. Only the alpha channel
+       matters; the system tints the opaque pixels. Transparent elsewhere. -->
+  <g fill="#1A1A1A">
+    <!-- calendar outline -->
+    <path d="M232 312 a64 64 0 0 1 64 -64 h432 a64 64 0 0 1 64 64 v400 a64 64 0 0 1 -64 64 h-432 a64 64 0 0 1 -64 -64 z
+             M286 356 v356 a10 10 0 0 0 10 10 h432 a10 10 0 0 0 10 -10 v-356 z" fill-rule="evenodd"/>
+    <!-- binding rings -->
+    <rect x="356" y="212" width="40" height="92" rx="20"/>
+    <rect x="628" y="212" width="40" height="92" rx="20"/>
+    <!-- week strip -->
+    <rect x="304" y="436" width="44" height="150" rx="18"/>
+    <rect x="366" y="436" width="44" height="150" rx="18"/>
+    <rect x="428" y="436" width="44" height="150" rx="18"/>
+    <rect x="488" y="412" width="48" height="198" rx="20"/>
+    <rect x="552" y="436" width="44" height="150" rx="18"/>
+    <rect x="614" y="436" width="44" height="150" rx="18"/>
+    <rect x="676" y="436" width="44" height="150" rx="18"/>
+  </g>
+  <path d="M398 652 L444 716 L512 660 L580 716 L626 652"
+        fill="none" stroke="#1A1A1A" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

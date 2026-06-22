@@ -34,10 +34,20 @@ The two apps are independent codebases that share only a concept and a localized
 - Build (sim): `cd ios && xcodegen generate && xcodebuild -scheme WeekNumberWidget -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build`
 - Test: `xcodebuild test -scheme WeekNumberWidget -destination 'platform=iOS Simulator,name=iPhone 16' CODE_SIGNING_ALLOWED=NO`
 - Min iOS 17 (required by `AppIntentConfiguration`).
-- `Shared/` is compiled into the app **and** the widget extension. Keep it
-  Foundation-only (no UIKit) so it stays portable and unit-testable.
+- `Shared/` is compiled into the app **and** the widget extension. Keep the
+  week-math (`WeekNumberCalculator`) and `SharedSettings` Foundation-only so they
+  stay unit-testable. `ColorHex.swift` is the one Shared file that imports
+  SwiftUI/UIKit (it bridges hex ↔ `Color`); its parsing core (`RGBA`) is still
+  Foundation-testable.
 - Widget settings use the native **Edit Widget** sheet (per-widget), backed by
-  `ConfigurationAppIntent`. There is intentionally no App Group yet.
+  `ConfigurationAppIntent`. A widget set to **Match app** reads colours the user
+  picked in the app, shared through the App Group `group.com.weeknumber.widget`.
+- **App Group caveat:** simulator and CI builds work without signing. On a
+  physical device / for App Store upload, the App Group must be registered under
+  your Apple Developer account and enabled on both the app and the extension App
+  IDs, or the shared colours won't reach the widget.
+- **Icons & store art** are generated from SVG in `design/` and `store/src/` via
+  `cairosvg` (`design/render_icons.py`). Re-run after editing the master SVGs.
 
 ## House rules
 

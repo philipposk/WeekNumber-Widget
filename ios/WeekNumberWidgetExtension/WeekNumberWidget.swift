@@ -48,11 +48,21 @@ struct WeekNumberWidgetView: View {
     }
 
     private var textColor: Color {
-        entry.configuration.tint.widgetTint.color ?? .primary
+        switch entry.configuration.tint {
+        case .matchApp:
+            if let hex = SharedSettings.textColorHex, let c = Color(hex: hex) { return c }
+            return .primary
+        default:
+            return entry.configuration.tint.widgetTint.color ?? .primary
+        }
     }
 
     private var isAccessory: Bool {
         family == .accessoryCircular || family == .accessoryRectangular || family == .accessoryInline
+    }
+
+    private var a11yLabel: String {
+        "\(WeekNumberCalculator.weekLabel()) \(weekNumber)"
     }
 
     var body: some View {
@@ -64,6 +74,8 @@ struct WeekNumberWidgetView: View {
                 circular
             case .accessoryRectangular:
                 rectangular
+            case .systemLarge:
+                largeScreen
             default:
                 homeScreen
             }
@@ -71,10 +83,14 @@ struct WeekNumberWidgetView: View {
         .containerBackground(for: .widget) {
             backgroundColor
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(a11yLabel)
     }
 
     @ViewBuilder private var backgroundColor: some View {
         switch entry.configuration.background {
+        case .matchApp:
+            if let hex = SharedSettings.backgroundColorHex, let c = Color(hex: hex) { c } else { Color.clear }
         case .clear: Color.clear
         case .white: Color.white
         case .black: Color.black
@@ -99,6 +115,39 @@ struct WeekNumberWidgetView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(8)
+    }
+
+    private var largeScreen: some View {
+        let range = WeekNumberCalculator.weekRange(weekStart: entry.configuration.weekStart, date: entry.date)
+        let fmt: DateFormatter = {
+            let f = DateFormatter()
+            f.setLocalizedDateFormatFromTemplate("MMMd")
+            return f
+        }()
+        let rangeText = range.map { "\(fmt.string(from: $0.start)) – \(fmt.string(from: $0.end))" } ?? ""
+        let daysLeft = WeekNumberCalculator.daysRemainingInYear(date: entry.date)
+
+        return VStack(spacing: 4) {
+            if entry.configuration.showLabel {
+                Text(WeekNumberCalculator.weekLabel().uppercased())
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(textColor.opacity(0.7))
+            }
+            Text("\(weekNumber)")
+                .font(.system(size: 150, weight: .bold, design: .rounded))
+                .minimumScaleFactor(0.3)
+                .lineLimit(1)
+                .foregroundStyle(textColor)
+            VStack(spacing: 2) {
+                Text(rangeText)
+                Text("\(daysLeft) days left in the year")
+            }
+            .font(.headline)
+            .foregroundStyle(textColor.opacity(0.6))
+            .padding(.top, 8)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(16)
     }
 
     private var circular: some View {
@@ -143,6 +192,7 @@ struct WeekNumberWidget: Widget {
         .supportedFamilies([
             .systemSmall,
             .systemMedium,
+            .systemLarge,
             .accessoryCircular,
             .accessoryRectangular,
             .accessoryInline,
