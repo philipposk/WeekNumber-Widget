@@ -21,6 +21,11 @@ targets:
     sources:
       - path: WeekNumberWidget
       - path: Shared
+    entitlements:
+      path: WeekNumberWidget/WeekNumberWidget.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.weeknumber.widget
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.weeknumber.widget
@@ -44,8 +49,35 @@ targets:
         CFBundleDisplayName: Week Number
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: WeekNumberWidgetExtension/WeekNumberWidgetExtension.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.weeknumber.widget
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.weeknumber.widget.widget
         GENERATE_INFOPLIST_FILE: NO
         TARGETED_DEVICE_FAMILY: "1,2"
+
+  WeekNumberWidgetTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: WeekNumberWidgetTests
+    dependencies:
+      - target: WeekNumberWidget
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.weeknumber.widget.tests
+        GENERATE_INFOPLIST_FILE: YES
+
+schemes:
+  WeekNumberWidget:
+    build:
+      targets:
+        WeekNumberWidget: all
+    test:
+      targets:
+        - WeekNumberWidgetTests
+      gatherCoverageData: true

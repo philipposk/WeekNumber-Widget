@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Transparent background: this is the adaptive-icon FOREGROUND layer.
+       Content stays within the centre safe zone. -->
+  <!-- Calendar card -->
+  <rect x="232" y="248" width="560" height="528" rx="64" fill="#FFFFFF"/>
+  <!-- Header bar -->
+  <path d="M232 312 a64 64 0 0 1 64 -64 h432 a64 64 0 0 1 64 64 v44 h-560 z" fill="#2E6FC7"/>
+  <!-- Binding rings -->
+  <rect x="356" y="212" width="40" height="92" rx="20" fill="#1F5298"/>
+  <rect x="628" y="212" width="40" height="92" rx="20" fill="#1F5298"/>
+  <!-- Week strip -->
+  <rect x="304" y="436" width="44" height="150" rx="18" fill="#E3ECF7"/>
+  <rect x="366" y="436" width="44" height="150" rx="18" fill="#E3ECF7"/>
+  <rect x="428" y="436" width="44" height="150" rx="18" fill="#E3ECF7"/>
+  <rect x="488" y="412" width="48" height="198" rx="20" fill="#4A90E2"/>
+  <rect x="552" y="436" width="44" height="150" rx="18" fill="#E3ECF7"/>
+  <rect x="614" y="436" width="44" height="150" rx="18" fill="#E3ECF7"/>
+  <rect x="676" y="436" width="44" height="150" rx="18" fill="#E3ECF7"/>
+  <!-- "W" mark -->
+  <path d="M398 652 L444 716 L512 660 L580 716 L626 652"
+        fill="none" stroke="#2E6FC7" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
