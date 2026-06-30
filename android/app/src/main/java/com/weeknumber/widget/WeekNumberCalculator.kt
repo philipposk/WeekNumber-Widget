@@ -62,6 +62,11 @@ object WeekNumberCalculator {
         return GregorianCalendar(Locale.US).get(Calendar.YEAR)
     }
 
+    /** Year the current week belongs to (ISO week-year when week start is Monday). */
+    fun getWeekYear(context: Context? = null, widgetId: Int = AppWidgetManager.INVALID_APPWIDGET_ID): Int {
+        return gregorian(resolveWeekStart(context, widgetId)).get(Calendar.WEEK_YEAR)
+    }
+
     /**
      * Formats the week number as a string
      */

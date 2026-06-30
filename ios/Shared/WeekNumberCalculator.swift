@@ -27,6 +27,21 @@ enum WeekNumberCalculator {
         Calendar(identifier: .gregorian).component(.year, from: date)
     }
 
+    /// Year the week belongs to (ISO week-year when week start is Monday).
+    static func weekYear(weekStart: WeekStart, date: Date = Date()) -> Int {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone.current
+        switch weekStart {
+        case .monday:
+            calendar.firstWeekday = 2
+            calendar.minimumDaysInFirstWeek = 4
+        case .sunday:
+            calendar.firstWeekday = 1
+            calendar.minimumDaysInFirstWeek = 1
+        }
+        return calendar.component(.yearForWeekOfYear, from: date)
+    }
+
     /// Localized word for "Week" based on the current system language.
     /// Mirrors the Android getWeekLabelForLanguage table.
     static func weekLabel(languageCode: String = Locale.current.language.languageCode?.identifier ?? "en") -> String {

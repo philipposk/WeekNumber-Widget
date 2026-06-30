@@ -3,6 +3,8 @@ package com.weeknumber.widget
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import java.util.Calendar
+import java.util.Locale
 
 class WeekNumberCalculatorTest {
 
@@ -51,5 +53,15 @@ class WeekNumberCalculatorTest {
     @Test
     fun usJan1IsAlwaysWeek1() {
         assertEquals(1, WeekNumberCalculator.weekNumberAt("sunday", 2021, 1, 1))
+    }
+
+    @Test
+    fun isoWeekYearSpansCalendarYear() {
+        val cal = java.util.GregorianCalendar(Locale.US)
+        cal.set(2021, Calendar.JANUARY, 1, 12, 0, 0)
+        cal.firstDayOfWeek = Calendar.MONDAY
+        cal.minimalDaysInFirstWeek = 4
+        assertEquals(2020, cal.get(Calendar.WEEK_YEAR))
+        assertEquals(53, cal.get(Calendar.WEEK_OF_YEAR))
     }
 }

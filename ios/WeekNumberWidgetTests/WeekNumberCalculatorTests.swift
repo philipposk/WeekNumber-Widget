@@ -69,6 +69,11 @@ final class WeekNumberCalculatorTests: XCTestCase {
         XCTAssertEqual(days, 6)
     }
 
+    func testIsoWeekYearSpansCalendarYear() {
+        // 2021-01-01 is ISO week 53 of 2020, not week 53 of 2021.
+        XCTAssertEqual(WeekNumberCalculator.weekYear(weekStart: .monday, date: date(2021, 1, 1)), 2020)
+    }
+
     // MARK: Colour hex round-trip
 
     func testHexParsesSixDigit() {

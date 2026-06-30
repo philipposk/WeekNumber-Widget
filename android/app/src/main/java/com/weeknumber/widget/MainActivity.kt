@@ -118,7 +118,7 @@ class MainActivity : AppCompatActivity() {
         val firstId = firstWidgetId()
         val week = WeekNumberCalculator.getCurrentWeekNumber(this, firstId)
         val label = WidgetPreferences.getWeekLabel(this, firstId)
-        val text = "$label $week · ${WeekNumberCalculator.getCurrentYear()}"
+        val text = "$label $week · ${WeekNumberCalculator.getWeekYear(this, firstId)}"
         val send = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
             putExtra(Intent.EXTRA_TEXT, text)
