@@ -46,6 +46,15 @@ object WeekNumberCalculator {
         return gregorian(resolveWeekStart(context, widgetId)).get(Calendar.WEEK_OF_YEAR)
     }
 
+    /** Fixed-date week number for unit tests (month is 1-based). */
+    internal fun weekNumberAt(weekStart: String, year: Int, month: Int, dayOfMonth: Int): Int {
+        val cal = gregorian(weekStart)
+        cal.clear()
+        cal.set(year, month - 1, dayOfMonth, 12, 0, 0)
+        cal.set(Calendar.MILLISECOND, 0)
+        return cal.get(Calendar.WEEK_OF_YEAR)
+    }
+
     /**
      * Gets the current year
      */

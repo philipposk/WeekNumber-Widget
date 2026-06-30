@@ -9,6 +9,7 @@ import com.weeknumber.widget.databinding.ActivityMainBinding
 import com.weeknumber.widget.widget.HomeScreenWidgetProvider
 import com.weeknumber.widget.widget.WidgetConfigureActivity
 import com.weeknumber.widget.widget.WidgetPreferences
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -84,15 +85,18 @@ class MainActivity : AppCompatActivity() {
         startActivity(configIntent)
     }
 
-    private fun updateWeekNumber() {
-        // Get week number using first widget's preference, or default to Monday
-        val appWidgetManager = AppWidgetManager.getInstance(this)
-        val componentName = ComponentName(this, HomeScreenWidgetProvider::class.java)
-        val widgetIds = appWidgetManager.getAppWidgetIds(componentName)
+    private fun firstWidgetId(): Int {
+        return AppWidgetManager.getInstance(this)
+            .getAppWidgetIds(ComponentName(this, HomeScreenWidgetProvider::class.java))
+            .firstOrNull() ?: AppWidgetManager.INVALID_APPWIDGET_ID
+    }
 
-        val firstId = widgetIds.firstOrNull() ?: AppWidgetManager.INVALID_APPWIDGET_ID
+    private fun updateWeekNumber() {
+        val firstId = firstWidgetId()
         val weekNumber = WeekNumberCalculator.getCurrentWeekNumber(this, firstId)
 
+        binding.weekLabel.text =
+            WidgetPreferences.getWeekLabel(this, firstId).uppercase(Locale.getDefault())
         binding.weekNumberText.text = weekNumber.toString()
         updateThisWeekCard(firstId)
     }
@@ -111,11 +115,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun shareWeekNumber() {
         // Share the same week the user sees on screen (first widget's preference).
-        val firstId = AppWidgetManager.getInstance(this)
-            .getAppWidgetIds(ComponentName(this, HomeScreenWidgetProvider::class.java))
-            .firstOrNull() ?: AppWidgetManager.INVALID_APPWIDGET_ID
+        val firstId = firstWidgetId()
         val week = WeekNumberCalculator.getCurrentWeekNumber(this, firstId)
-        val text = getString(R.string.share_week_text, week, WeekNumberCalculator.getCurrentYear())
+        val label = WidgetPreferences.getWeekLabel(this, firstId)
+        val text = "$label $week · ${WeekNumberCalculator.getCurrentYear()}"
         val send = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
             putExtra(Intent.EXTRA_TEXT, text)

@@ -23,4 +23,33 @@ class WeekNumberCalculatorTest {
         val y = WeekNumberCalculator.getCurrentYear()
         assertTrue("year sane", y in 2020..2100)
     }
+
+    // ISO 8601 (Monday start)
+
+    @Test
+    fun isoFirstWeekOf2024() {
+        assertEquals(1, WeekNumberCalculator.weekNumberAt("monday", 2024, 1, 1))
+    }
+
+    @Test
+    fun isoWeek1SpansYearBoundary() {
+        assertEquals(53, WeekNumberCalculator.weekNumberAt("monday", 2021, 1, 1))
+    }
+
+    @Test
+    fun isoMidYear() {
+        assertEquals(25, WeekNumberCalculator.weekNumberAt("monday", 2026, 6, 15))
+    }
+
+    // US (Sunday start)
+
+    @Test
+    fun usFirstWeekContainsJan1() {
+        assertEquals(1, WeekNumberCalculator.weekNumberAt("sunday", 2024, 1, 1))
+    }
+
+    @Test
+    fun usJan1IsAlwaysWeek1() {
+        assertEquals(1, WeekNumberCalculator.weekNumberAt("sunday", 2021, 1, 1))
+    }
 }

@@ -21,7 +21,9 @@ struct Provider: AppIntentTimelineProvider {
     /// over on its own at the day boundary, with a refresh scheduled past it.
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<WeekEntry> {
         let now = Date()
-        let nextMidnight = Calendar.current.nextDate(
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = .current
+        let nextMidnight = calendar.nextDate(
             after: now,
             matching: DateComponents(hour: 0, minute: 0, second: 5),
             matchingPolicy: .nextTime

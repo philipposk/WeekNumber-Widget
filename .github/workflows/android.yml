@@ -37,9 +37,11 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle-
 
       - name: Unit tests
+        timeout-minutes: 10
         run: ./gradlew testDebugUnitTest --no-daemon
 
       - name: Assemble debug APK
+        timeout-minutes: 10
         run: ./gradlew assembleDebug --no-daemon
 
       - name: Upload debug APK
