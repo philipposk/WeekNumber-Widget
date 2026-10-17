@@ -1,0 +1,58 @@
+name: iOS
+
+on:
+  push:
+    branches: [main]
+    paths: ['ios/**', '.github/workflows/ios.yml']
+  pull_request:
+    paths: ['ios/**', '.github/workflows/ios.yml']
+
+jobs:
+  build:
+    runs-on: macos-15
+    defaults:
+      run:
+        working-directory: ios
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      # Use the image's default Xcode so the iphonesimulator SDK and the
+      # installed simulator runtimes match (forcing an older Xcode causes
+      # actool "No simulator runtime version ... available" failures).
+      - name: Show toolchain
+        run: |
+          xcodebuild -version
+          xcrun simctl list runtimes | grep iOS || true
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate project
+        run: xcodegen generate
+
+      - name: Pick an installed iOS simulator
+        id: sim
+        run: |
+          NAME=$(xcrun simctl list devices available | grep -Eo 'iPhone 1[0-9]( Pro)?' | head -1)
+          echo "name=${NAME:-iPhone 16}" >> "$GITHUB_OUTPUT"
+          echo "Using simulator: ${NAME:-iPhone 16}"
+
+      - name: Unit tests
+        timeout-minutes: 15
+        run: |
+          xcodebuild test \
+            -project WeekNumberWidget.xcodeproj \
+            -scheme WeekNumberWidget \
+            -destination "platform=iOS Simulator,name=${{ steps.sim.outputs.name }}" \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Build app + extension
+        timeout-minutes: 15
+        run: |
+          xcodebuild build \
+            -project WeekNumberWidget.xcodeproj \
+            -scheme WeekNumberWidget \
+            -destination "platform=iOS Simulator,name=${{ steps.sim.outputs.name }}" \
+            CODE_SIGNING_ALLOWED=NO

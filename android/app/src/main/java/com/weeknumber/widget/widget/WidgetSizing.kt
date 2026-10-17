@@ -35,13 +35,24 @@ object WidgetSizing {
             val options: Bundle = mgr.getAppWidgetOptions(appWidgetId)
             val w = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH, DEFAULT_DP)
             val h = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT, DEFAULT_DP)
-            Size(
-                if (w <= 0) DEFAULT_DP else w,
-                if (h <= 0) DEFAULT_DP else h
-            )
+            // Most launchers report dp. A few (some Samsung One UI, MIUI builds) report
+            // raw cell counts (<=10) or pixels (>1200). Sanitise both extremes so the
+            // sizing math always sees a plausible dp range.
+            val safeW = sanitiseDp(w)
+            val safeH = sanitiseDp(h)
+            Size(safeW, safeH)
         } catch (_: Exception) {
             Size(DEFAULT_DP, DEFAULT_DP)
         }
+    }
+
+    private fun sanitiseDp(value: Int): Int {
+        if (value <= 0) return DEFAULT_DP
+        // Launcher reported cell counts instead of dp → approximate 72 dp per cell.
+        if (value <= 12) return value * 72
+        // Launcher reported pixels (typical phone ≤ 1440px wide). Assume xxhdpi (3x).
+        if (value > 1200) return value / 3
+        return value
     }
 
     fun pickLayout(size: Size): Int = when {

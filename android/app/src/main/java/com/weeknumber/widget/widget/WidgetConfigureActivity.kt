@@ -7,6 +7,8 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.SeekBar
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
@@ -160,10 +162,14 @@ class WidgetConfigureActivity : AppCompatActivity() {
             "Gray" to Color.GRAY
         )
 
-        val names = colors.map { it.first }.toTypedArray()
+        val names = (colors.map { it.first } + "Custom…").toTypedArray()
         AlertDialog.Builder(this)
             .setTitle(if (type == "background") "Background" else "Text color")
             .setItems(names) { _, which ->
+                if (which == colors.size) {
+                    showCustomColorDialog(type)
+                    return@setItems
+                }
                 val selected = colors[which].second
                 if (type == "background") {
                     backgroundColor = selected
@@ -176,6 +182,64 @@ class WidgetConfigureActivity : AppCompatActivity() {
                 updateColorPickers()
                 updatePreview()
             }
+            .show()
+    }
+
+    /** Free RGB(+alpha for background) colour picker built from SeekBars — no extra deps. */
+    private fun showCustomColorDialog(type: String) {
+        val allowAlpha = type == "background"
+        val initial = if (type == "background") backgroundColor else textColor
+        // Transparent means alpha 0; reflect that as a starting opacity of 0.
+        var a = if (initial == Color.TRANSPARENT) 0 else Color.alpha(initial)
+        var r = Color.red(initial); var g = Color.green(initial); var b = Color.blue(initial)
+
+        val density = resources.displayMetrics.density
+        fun dp(v: Int) = (v * density).toInt()
+
+        val container = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(dp(20), dp(16), dp(20), dp(8))
+        }
+        val swatch = View(this).apply {
+            layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp(56))
+        }
+        container.addView(swatch)
+
+        fun current() = Color.argb(if (allowAlpha) a else 255, r, g, b)
+        fun refresh() { swatch.setBackgroundColor(current()) }
+        refresh()
+
+        fun addSlider(label: String, initialValue: Int, onChange: (Int) -> Unit) {
+            container.addView(TextView(this).apply {
+                text = label
+                setPadding(0, dp(12), 0, 0)
+            })
+            container.addView(SeekBar(this).apply {
+                max = 255
+                progress = initialValue
+                setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+                    override fun onProgressChanged(sb: SeekBar?, p: Int, fromUser: Boolean) { onChange(p); refresh() }
+                    override fun onStartTrackingTouch(sb: SeekBar?) {}
+                    override fun onStopTrackingTouch(sb: SeekBar?) {}
+                })
+            })
+        }
+
+        if (allowAlpha) addSlider("Opacity", a) { a = it }
+        addSlider("Red", r) { r = it }
+        addSlider("Green", g) { g = it }
+        addSlider("Blue", b) { b = it }
+
+        AlertDialog.Builder(this)
+            .setTitle("Custom colour")
+            .setView(container)
+            .setPositiveButton("Use") { _, _ ->
+                val picked = current()
+                if (type == "background") backgroundColor = picked else textColor = picked
+                updateColorPickers()
+                updatePreview()
+            }
+            .setNegativeButton("Cancel", null)
             .show()
     }
 

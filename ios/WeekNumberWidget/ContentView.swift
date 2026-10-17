@@ -8,13 +8,20 @@ struct ContentView: View {
         WeekNumberCalculator.currentWeekNumber(weekStart: weekStart)
     }
 
+    private var shareText: String {
+        // Language-neutral separator so the connector isn't English-only.
+        "\(WeekNumberCalculator.weekLabel()) \(weekNumber) · \(WeekNumberCalculator.weekYear(weekStart: weekStart))"
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
                     heroCard
+                    thisWeekCard
                     description
                     weekStartPicker
+                    colorsLink
                     instructionsCard
                     aboutLink
                 }
@@ -22,14 +29,71 @@ struct ContentView: View {
             }
             .background(Color(.systemBackground))
             .navigationTitle("Week Number")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    ShareLink(item: shareText) {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                }
+            }
         }
     }
 
-    private var aboutLink: some View {
-        NavigationLink(destination: AboutView()) {
+    private var thisWeekCard: some View {
+        let range = WeekNumberCalculator.weekRange(weekStart: weekStart)
+        let fmt: DateFormatter = {
+            let f = DateFormatter()
+            // Locale-adaptive month/day order rather than a fixed "MMM d".
+            f.setLocalizedDateFormatFromTemplate("MMMd")
+            return f
+        }()
+        let rangeText: String = {
+            guard let range else { return "—" }
+            return "\(fmt.string(from: range.start)) – \(fmt.string(from: range.end))"
+        }()
+        let daysLeft = WeekNumberCalculator.daysRemainingInYear()
+        let progress = WeekNumberCalculator.yearProgress()
+
+        return VStack(alignment: .leading, spacing: 12) {
+            Text("THIS WEEK")
+                .font(.caption.weight(.semibold))
+                .tracking(1)
+                .foregroundStyle(.secondary)
+            infoRow(icon: "calendar", label: "Dates", value: rangeText)
+            infoRow(icon: "clock", label: "Days left in year", value: "\(daysLeft)")
+            VStack(alignment: .leading, spacing: 6) {
+                HStack {
+                    Image(systemName: "chart.bar.fill").frame(width: 22)
+                    Text("Year progress").foregroundStyle(.secondary)
+                    Spacer()
+                    Text("\(Int(progress * 100))%").fontWeight(.semibold)
+                }
+                .font(.subheadline)
+                ProgressView(value: progress)
+                    .tint(.accentColor)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(20)
+        .background(Color(.secondarySystemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+    }
+
+    private func infoRow(icon: String, label: String, value: String) -> some View {
+        HStack {
+            Image(systemName: icon).frame(width: 22)
+            Text(label).foregroundStyle(.secondary)
+            Spacer()
+            Text(value).fontWeight(.semibold)
+        }
+        .font(.subheadline)
+    }
+
+    private func rowLink<Destination: View>(icon: String, title: String, destination: Destination) -> some View {
+        NavigationLink(destination: destination) {
             HStack {
-                Image(systemName: "info.circle")
-                Text("About").font(.headline)
+                Image(systemName: icon)
+                Text(title).font(.headline)
                 Spacer()
                 Image(systemName: "chevron.right")
                     .font(.caption)
@@ -41,6 +105,14 @@ struct ContentView: View {
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
         .buttonStyle(.plain)
+    }
+
+    private var colorsLink: some View {
+        rowLink(icon: "paintpalette", title: "Widget colours", destination: WidgetColorSettingsView())
+    }
+
+    private var aboutLink: some View {
+        rowLink(icon: "info.circle", title: "About", destination: AboutView())
     }
 
     private var heroCard: some View {
@@ -58,6 +130,8 @@ struct ContentView: View {
         .padding(.vertical, 40)
         .background(Color(.secondarySystemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(WeekNumberCalculator.weekLabel()) \(weekNumber)")
     }
 
     private var description: some View {

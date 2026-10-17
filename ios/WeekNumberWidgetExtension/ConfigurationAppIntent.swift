@@ -22,11 +22,13 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
 }
 
 /// AppEnum wrappers so the values appear as pickers in the Edit screen.
+/// `.matchApp` defers to the colour chosen in the app (shared via App Group).
 enum TintChoice: String, AppEnum {
-    case system, white, black, purple, blue, red, green, orange, teal, gray
+    case matchApp, system, white, black, purple, blue, red, green, orange, teal, gray
 
     static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Text color")
     static var caseDisplayRepresentations: [TintChoice: DisplayRepresentation] = [
+        .matchApp: "Match app",
         .system: "System",
         .white: "White",
         .black: "Black",
@@ -43,10 +45,11 @@ enum TintChoice: String, AppEnum {
 }
 
 enum BackgroundChoice: String, AppEnum {
-    case clear, white, black, gray
+    case matchApp, clear, white, black, gray
 
     static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Background")
     static var caseDisplayRepresentations: [BackgroundChoice: DisplayRepresentation] = [
+        .matchApp: "Match app",
         .clear: "Clear",
         .white: "White",
         .black: "Black",
